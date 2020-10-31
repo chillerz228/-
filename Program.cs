@@ -11,12 +11,26 @@ namespace isrpo_1
             int[] max19 = new int[] { 0,1 };
             max[0] = 0; max[1] = 1;
             max19[0] = 0; max19[1] = 1;
-            Console.WriteLine("Введите количество шагов в цикле");
-            N = Convert.ToInt32(Console.ReadLine());
-            if(N <= 0)
-            { Console.WriteLine("Пожалуйста, введите число больше 1 или равное 1"); }
-            if(N >= 1 )
-            Console.WriteLine("Введено успешно");
+            try
+            {
+                Console.WriteLine("Введите количество шагов в цикле");
+                N = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("invalid data type");
+            }
+            try
+            {
+                if (N <= 0)
+                { Console.WriteLine("Пожалуйста, введите число больше 1 или равное 1"); }
+                if (N >= 1)
+                    Console.WriteLine("Введено успешно");
+            }
+            catch
+            {
+                Console.WriteLine("Неверные данные, неверно, пожалуйста перепроверьте");
+            }
             for (i = 1; i <= N; i++)
             {   
                 a = Convert.ToInt32(Console.ReadLine());
